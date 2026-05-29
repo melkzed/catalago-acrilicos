@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Conheça a Recife Acrílicos, especializada em chapas de acrílico, PS, PVC expandido e acessórios em Recife/PE.">
+  <title>Sobre | Recife Acrílicos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script type="module" src="../assets/js/app.js"></script>
+</head>
+<body data-page="sobre">
+  <header class="site-header">
+    <nav class="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-3 lg:px-10">
+      <a class="brand" href="../index.html" aria-label="Página inicial Recife Acrílicos">
+        <span class="brand-mark">RA</span>
+        <span>Recife Acrílicos</span>
+      </a>
+
+      <div class="flex flex-wrap items-center gap-2">
+        <a class="nav-link" href="../index.html">Início</a>
+        <a class="nav-link" href="./produtos.html">Produtos</a>
+        <a class="nav-link active" aria-current="page" href="./sobre.html">Sobre</a>
+      </div>
+
+      <button class="cart-button" type="button" data-cart-toggle>
+        <span>Orçamento</span>
+        <span class="cart-count" data-cart-count>0</span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="grid min-h-[440px] lg:grid-cols-2">
+      <div class="about-visual" data-animate="fade-up">
+        <div>
+          <span class="about-mark">RA</span>
+          <h1>Recife Acrílicos</h1>
+          <p>Qualidade, variedade e atendimento rápido para quem trabalha com chapas e materiais plásticos.</p>
+        </div>
+      </div>
+
+      <div class="flex items-center bg-white px-5 py-14 lg:px-16" data-animate="fade-up">
+        <div class="max-w-xl">
+          <span class="page-kicker text-[var(--accent)]">Quem somos</span>
+          <h2 class="mt-3 font-display text-3xl font-bold text-neutral-950 lg:text-4xl">Especialistas em soluções de acrílico em Recife.</h2>
+          <p class="mt-5 leading-8 text-neutral-600">
+            A Recife Acrílicos comercializa chapas de acrílico, poliestireno, PVC expandido e acessórios para clientes finais, profissionais e empresas.
+          </p>
+          <p class="mt-4 leading-8 text-neutral-600">
+            O atendimento é focado em agilidade, clareza nas informações e produtos organizados por linha, medida, espessura e acabamento.
+          </p>
+
+          <div class="mt-6 grid gap-3 sm:grid-cols-2">
+            <span class="check-pill">Mais de 1000 clientes atendidos</span>
+            <span class="check-pill">Chapas inteiras e corte ao meio</span>
+            <span class="check-pill">Atendimento pelo WhatsApp</span>
+            <span class="check-pill">Variedade de acessórios</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-band">
+      <div class="mx-auto max-w-7xl px-5 py-16 lg:px-10">
+        <div class="grid gap-4 md:grid-cols-2">
+          <article class="value-panel" data-animate="fade-up">
+            <span>Missão</span>
+            <h2>Fornecer materiais com qualidade e agilidade.</h2>
+            <p>Soluções em chapas acrílicas e complementos com atendimento objetivo para facilitar cada projeto.</p>
+          </article>
+          <article class="value-panel" data-animate="fade-up">
+            <span>Visão</span>
+            <h2>Ser referência regional em materiais plásticos.</h2>
+            <p>Construir confiança com organização, variedade e transparência no atendimento.</p>
+          </article>
+        </div>
+
+        <div class="mt-12">
+          <div class="section-heading" data-animate="fade-up">
+            <span>Valores</span>
+            <h2>O que sustenta o atendimento</h2>
+          </div>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="mini-card" data-animate="fade-up">
+              <strong>Qualidade</strong>
+              <p>Produtos selecionados para uso profissional.</p>
+            </article>
+            <article class="mini-card" data-animate="fade-up">
+              <strong>Competitividade</strong>
+              <p>Preço justo e variedade para diferentes demandas.</p>
+            </article>
+            <article class="mini-card" data-animate="fade-up">
+              <strong>Agilidade</strong>
+              <p>Respostas rápidas para orçamento e disponibilidade.</p>
+            </article>
+            <article class="mini-card" data-animate="fade-up">
+              <strong>Atendimento</strong>
+              <p>Orientação clara para facilitar a escolha do material.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-band">
+      <div class="mx-auto grid max-w-7xl gap-8 px-5 py-14 lg:grid-cols-2 lg:px-10">
+        <div data-animate="fade-up">
+          <span class="page-kicker text-white/70">Contato</span>
+          <h2>Fale com a Recife Acrílicos</h2>
+          <p>Confira disponibilidade, tire dúvidas e monte seu pedido pelo WhatsApp.</p>
+          <a class="button button-light mt-7" href="https://wa.me/5581984749394?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noreferrer">
+            Iniciar conversa
+          </a>
+        </div>
+
+        <div class="grid gap-3" data-animate="fade-up">
+          <div class="contact-line"><span>WhatsApp</span><strong>(81) 98474-9394</strong></div>
+          <div class="contact-line"><span>Endereço</span><strong>Rua do Peixoto, 314 - Recife/PE</strong></div>
+          <div class="contact-line"><span>Instagram</span><strong>@recifeacrilicosealuminios_</strong></div>
+          <div class="contact-line"><span>Horário</span><strong>Seg-Sex: 8h às 17h | Sáb: 8h às 12h</strong></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="mx-auto grid max-w-7xl gap-8 px-5 py-12 md:grid-cols-[2fr_1fr_1fr] lg:px-10">
+      <div>
+        <strong class="footer-brand">Recife Acrílicos</strong>
+        <p class="mt-3 max-w-sm text-sm leading-7 text-white/55">
+          Materiais plásticos, chapas e acessórios com atendimento próximo e profissional.
+        </p>
+      </div>
+      <div>
+        <h3>Menu</h3>
+        <a class="footer-link" href="../index.html">Início</a>
+        <a class="footer-link" href="./produtos.html">Produtos</a>
+        <a class="footer-link" href="./sobre.html">Sobre</a>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <p>(81) 98474-9394</p>
+        <p>Rua do Peixoto, 314</p>
+        <p>Seg-Sex: 8h às 17h</p>
+        <p>Sáb: 8h às 12h</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Recife Acrílicos. Todos os direitos reservados.</span>
+      <span>Recife/PE.</span>
+    </div>
+  </footer>
+</body>
+</html>
