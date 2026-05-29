@@ -4,10 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Catálogo profissional da Recife Acrílicos com chapas de acrílico, PS, PVC expandido e acessórios em Recife/PE.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a6b3c">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Recife Acrílicos">
+  <meta property="og:title" content="Recife Acrílicos | Catálogo Profissional">
+  <meta property="og:description" content="Chapas de acrílico, PS, PVC expandido e acessórios em Recife/PE. Consulte o catálogo e solicite orçamento pelo WhatsApp.">
+  <meta property="og:image" content="./assets/img/hero-acrilicos.png">
+  <meta property="og:url" content="./index.html">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Recife Acrílicos | Catálogo Profissional</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
+  <link rel="canonical" href="./index.html">
+  <link rel="preload" as="image" href="./assets/img/hero-acrilicos.png">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="./assets/css/styles.css">
@@ -16,31 +28,44 @@
 </head>
 <body data-page="home">
   <header class="site-header">
-    <nav class="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-3 lg:px-10">
+    <nav class="site-nav mx-auto max-w-7xl px-5 py-3 lg:px-10" aria-label="Navegação principal">
       <a class="brand" href="./index.html" aria-label="Página inicial Recife Acrílicos">
         <span class="brand-mark">RA</span>
         <span>Recife Acrílicos</span>
       </a>
 
-      <div class="flex flex-wrap items-center gap-2">
+      <div class="desktop-nav" aria-label="Menu principal">
         <a class="nav-link active" aria-current="page" href="./index.html">Início</a>
         <a class="nav-link" href="./pages/produtos.html">Produtos</a>
         <a class="nav-link" href="./pages/sobre.html">Sobre</a>
       </div>
 
-      <button class="cart-button" type="button" data-cart-toggle>
-        <span>Orçamento</span>
-        <span class="cart-count" data-cart-count>0</span>
-      </button>
+      <div class="nav-actions">
+        <button class="cart-button" type="button" data-cart-toggle>
+          <span>Orçamento</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="Abrir menu" aria-controls="mobileMenu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
+    <div class="mobile-menu" id="mobileMenu" data-mobile-menu aria-hidden="true">
+      <a class="nav-link active" aria-current="page" href="./index.html">Início</a>
+      <a class="nav-link" href="./pages/produtos.html">Produtos</a>
+      <a class="nav-link" href="./pages/sobre.html">Sobre</a>
+      <a class="nav-link nav-link-wa" href="https://wa.me/5581984749394?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
   </header>
 
   <main>
     <section class="hero-shell">
-      <div class="mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center px-5 py-16 lg:px-10">
+      <div class="hero-inner mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center px-5 py-16 lg:px-10">
         <div class="max-w-2xl">
           <span class="hero-badge" data-animate="fade-up">Chapas e acessórios em Recife</span>
-          <h1 class="mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-7xl" data-animate="fade-up">
+          <h1 class="hero-title mt-6 text-4xl font-extrabold leading-tight text-white sm:text-5xl lg:text-7xl" data-animate="fade-up">
             Acrílicos, PS e PVC com acabamento profissional.
           </h1>
           <p class="mt-6 max-w-xl text-base leading-8 text-white/75 sm:text-lg" data-animate="fade-up">
@@ -130,5 +155,24 @@
       <span>Desenvolvido em Recife.</span>
     </div>
   </footer>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Recife Acrílicos",
+      "description": "Catálogo de chapas de acrílico, PS, PVC expandido e acessórios em Recife/PE.",
+      "telephone": "+55 81 98474-9394",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua do Peixoto, 314",
+        "addressLocality": "Recife",
+        "addressRegion": "PE",
+        "addressCountry": "BR"
+      },
+      "openingHours": ["Mo-Fr 08:00-17:00", "Sa 08:00-12:00"],
+      "image": "./assets/img/hero-acrilicos.png",
+      "sameAs": ["https://www.instagram.com/recifeacrilicosealuminios_/"]
+    }
+  </script>
 </body>
 </html>

@@ -1221,3 +1221,288 @@ h4 {
     min-height: 40px;
   }
 }
+
+/* Responsive navigation and mobile catalog controls */
+.site-nav {
+  display: grid;
+  min-height: 66px;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 18px;
+}
+
+.brand span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.nav-actions {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--dark);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.menu-toggle span + span {
+  margin-top: 4px;
+}
+
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.nav-link-wa {
+  color: var(--accent);
+}
+
+.filter-toggle {
+  display: none;
+  width: 100%;
+  min-height: 46px;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--dark);
+  color: #fff;
+  padding: 0 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.hero-title {
+  max-width: 720px;
+  text-wrap: balance;
+}
+
+.button:focus-visible,
+.cart-button:focus-visible,
+.nav-link:focus-visible,
+.menu-toggle:focus-visible,
+.filter-btn:focus-visible,
+.filter-toggle:focus-visible {
+  outline: 3px solid rgba(26, 107, 60, 0.3);
+  outline-offset: 3px;
+}
+
+@media (max-width: 860px) {
+  .site-nav {
+    min-height: 62px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: grid;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand span:last-child {
+    max-width: 48vw;
+  }
+
+  .nav-actions {
+    gap: 8px;
+  }
+
+  .cart-button {
+    min-height: 40px;
+    padding-inline: 12px;
+    font-size: 13px;
+  }
+
+  .mobile-menu {
+    display: grid;
+    max-height: 0;
+    overflow: hidden;
+    border-top: 0 solid var(--border);
+    background: #fff;
+    padding: 0 20px;
+    opacity: 0;
+    transition: max-height 0.25s ease, opacity 0.2s ease, padding 0.2s ease, border-width 0.2s ease;
+  }
+
+  .mobile-menu.open {
+    max-height: 330px;
+    border-top-width: 1px;
+    padding-block: 12px;
+    opacity: 1;
+  }
+
+  .mobile-menu .nav-link {
+    justify-content: space-between;
+    min-height: 46px;
+    border-bottom: 1px solid var(--border);
+    border-radius: 0;
+    padding-inline: 4px;
+  }
+
+  .mobile-menu .nav-link:last-child {
+    border-bottom: 0;
+  }
+
+  .hero-shell {
+    background-image:
+      linear-gradient(180deg, rgba(8, 25, 14, 0.95) 0%, rgba(18, 80, 44, 0.84) 54%, rgba(18, 80, 44, 0.4) 100%),
+      url("../img/hero-acrilicos.png");
+    background-position: 58% center;
+  }
+
+  .hero-inner {
+    min-height: auto;
+    padding-block: 72px 56px;
+  }
+
+  .hero-inner > div {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hero-inner p {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    max-width: 100%;
+    font-size: clamp(32px, 8.8vw, 42px) !important;
+    line-height: 1.06 !important;
+    overflow-wrap: normal;
+  }
+
+  .hero-stat {
+    padding: 14px 10px;
+  }
+
+  .hero-stat span {
+    font-size: 10px;
+  }
+
+  .section-heading {
+    text-align: left;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(26px, 8vw, 34px);
+  }
+
+  .category-card {
+    min-height: 0;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(32px, 10vw, 42px);
+    line-height: 1.08;
+  }
+
+  .page-hero p {
+    font-size: 15px;
+  }
+
+  .catalog-shell {
+    padding-top: 18px;
+  }
+
+  .catalog-sidebar {
+    padding: 12px;
+  }
+
+  .filter-toggle {
+    display: flex;
+  }
+
+  .filter-panel {
+    display: none;
+    padding-top: 14px;
+  }
+
+  .filter-panel.open {
+    display: block;
+  }
+
+  .catalog-content {
+    padding-top: 18px;
+  }
+
+  .product-body {
+    min-height: auto;
+  }
+
+  .about-visual {
+    min-height: 340px;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .cart-button {
+    padding-inline: 10px;
+  }
+
+  .info-pill {
+    justify-content: flex-start;
+    padding-inline: 14px;
+  }
+
+  .contact-card,
+  .value-panel,
+  .mini-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-title {
+    font-size: clamp(30px, 8.2vw, 36px) !important;
+  }
+}

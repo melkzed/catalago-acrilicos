@@ -442,6 +442,16 @@ function sendQuickQuote(groupId) {
 }
 
 function bindCatalogEvents() {
+  const filterToggle = document.querySelector("[data-filter-toggle]");
+  const filterPanel = document.querySelector("[data-filter-panel]");
+
+  filterToggle?.addEventListener("click", () => {
+    const isOpen = filterPanel?.classList.toggle("open");
+    filterToggle.setAttribute("aria-expanded", String(Boolean(isOpen)));
+    const icon = filterToggle.querySelector("[aria-hidden='true']");
+    if (icon) icon.textContent = isOpen ? "−" : "+";
+  });
+
   document.getElementById("searchInput")?.addEventListener("input", applyFilters);
 
   document.querySelectorAll("#catFilters, #typeFilters, #originFilters").forEach((container) => {

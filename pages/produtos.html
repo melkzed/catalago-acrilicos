@@ -3,11 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Produtos e variações da Recife Acrílicos: chapas de acrílico, PS, PVC expandido e acessórios.">
+  <meta name="description" content="Consulte chapas de acrílico cristal, leitoso, preto, colorido, espelhado, PVC expandido e acessórios da Recife Acrílicos.">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#1a6b3c">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Recife Acrílicos">
+  <meta property="og:title" content="Produtos e Variações | Recife Acrílicos">
+  <meta property="og:description" content="Catálogo com medidas, espessuras e acabamentos para solicitar orçamento pelo WhatsApp.">
+  <meta property="og:image" content="../assets/img/hero-acrilicos.png">
+  <meta property="og:url" content="./produtos.html">
+  <meta name="twitter:card" content="summary_large_image">
   <title>Produtos | Recife Acrílicos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+  <link rel="canonical" href="./produtos.html">
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../assets/css/styles.css">
@@ -16,23 +27,36 @@
 </head>
 <body data-page="produtos">
   <header class="site-header">
-    <nav class="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center justify-between gap-3 px-5 py-3 lg:px-10">
+    <nav class="site-nav mx-auto max-w-7xl px-5 py-3 lg:px-10" aria-label="Navegação principal">
       <a class="brand" href="../index.html" aria-label="Página inicial Recife Acrílicos">
         <span class="brand-mark">RA</span>
         <span>Recife Acrílicos</span>
       </a>
 
-      <div class="flex flex-wrap items-center gap-2">
+      <div class="desktop-nav" aria-label="Menu principal">
         <a class="nav-link" href="../index.html">Início</a>
         <a class="nav-link active" aria-current="page" href="./produtos.html">Produtos</a>
         <a class="nav-link" href="./sobre.html">Sobre</a>
       </div>
 
-      <button class="cart-button" type="button" data-cart-toggle>
-        <span>Orçamento</span>
-        <span class="cart-count" data-cart-count>0</span>
-      </button>
+      <div class="nav-actions">
+        <button class="cart-button" type="button" data-cart-toggle>
+          <span>Orçamento</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+        <button class="menu-toggle" type="button" data-menu-toggle aria-label="Abrir menu" aria-controls="mobileMenu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </nav>
+    <div class="mobile-menu" id="mobileMenu" data-mobile-menu aria-hidden="true">
+      <a class="nav-link" href="../index.html">Início</a>
+      <a class="nav-link active" aria-current="page" href="./produtos.html">Produtos</a>
+      <a class="nav-link" href="./sobre.html">Sobre</a>
+      <a class="nav-link nav-link-wa" href="https://wa.me/5581984749394?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
   </header>
 
   <main>
@@ -44,26 +68,32 @@
       </div>
     </section>
 
-    <section class="mx-auto grid max-w-7xl gap-0 px-5 py-8 lg:grid-cols-[280px_1fr] lg:px-10">
+    <section class="catalog-shell mx-auto grid max-w-7xl gap-0 px-5 py-8 lg:grid-cols-[280px_1fr] lg:px-10">
       <aside class="catalog-sidebar" data-animate="fade-up">
-        <div class="filter-group">
-          <h2>Buscar</h2>
-          <input class="search-input" type="search" id="searchInput" placeholder="Nome, tipo, cor..." autocomplete="off">
-        </div>
+        <button class="filter-toggle" type="button" data-filter-toggle aria-expanded="false" aria-controls="filterPanel">
+          <span>Filtros e busca</span>
+          <span aria-hidden="true">+</span>
+        </button>
+        <div class="filter-panel" id="filterPanel" data-filter-panel>
+          <div class="filter-group">
+            <h2>Buscar</h2>
+            <input class="search-input" type="search" id="searchInput" placeholder="Nome, tipo, cor..." autocomplete="off">
+          </div>
 
-        <div class="filter-group">
-          <h2>Categoria</h2>
-          <div class="filter-list" id="catFilters"></div>
-        </div>
+          <div class="filter-group">
+            <h2>Categoria</h2>
+            <div class="filter-list" id="catFilters"></div>
+          </div>
 
-        <div class="filter-group">
-          <h2>Tipo</h2>
-          <div class="filter-list" id="typeFilters"></div>
-        </div>
+          <div class="filter-group">
+            <h2>Tipo</h2>
+            <div class="filter-list" id="typeFilters"></div>
+          </div>
 
-        <div class="filter-group">
-          <h2>Origem</h2>
-          <div class="filter-list" id="originFilters"></div>
+          <div class="filter-group">
+            <h2>Origem</h2>
+            <div class="filter-list" id="originFilters"></div>
+          </div>
         </div>
       </aside>
 
@@ -105,5 +135,29 @@
       <span>Atendimento via WhatsApp.</span>
     </div>
   </footer>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Produtos | Recife Acrílicos",
+      "description": "Catálogo de chapas de acrílico, PVC expandido e acessórios para orçamento.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Recife Acrílicos"
+      },
+      "about": {
+        "@type": "LocalBusiness",
+        "name": "Recife Acrílicos",
+        "telephone": "+55 81 98474-9394",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua do Peixoto, 314",
+          "addressLocality": "Recife",
+          "addressRegion": "PE",
+          "addressCountry": "BR"
+        }
+      }
+    }
+  </script>
 </body>
 </html>
