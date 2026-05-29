@@ -2,6 +2,7 @@ export function initNavigation() {
   const toggle = document.querySelector("[data-menu-toggle]");
   const menu = document.querySelector("[data-mobile-menu]");
   if (!toggle || !menu) return;
+  const header = toggle.closest(".site-header");
 
   const setOpen = (open) => {
     toggle.classList.toggle("open", open);
@@ -22,6 +23,12 @@ export function initNavigation() {
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") setOpen(false);
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!menu.classList.contains("open")) return;
+    if (header?.contains(event.target)) return;
+    setOpen(false);
   });
 
   window.addEventListener("resize", () => {

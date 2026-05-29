@@ -42,11 +42,9 @@ catalago acrilicos/
 │       ├── animations.js           # Animações via GSAP (fade-up, modal, cards)
 │       ├── cart.js                 # Carrinho de orçamento com persistência em localStorage
 │       ├── catalog.js              # Catálogo: filtros, cards, modal de variações
-│       ├── navigation.js           # Menu hambúrguer e navegação mobile
 │       ├── ui.js                   # Utilitários: escapeHtml, toast, normalizeText, openWhatsApp
 │       └── data/
 │           └── products.js         # Fonte de dados: grupos de produtos e variações
-├── robots.txt                      # Permissão de indexação para buscadores
 └── README.md
 ```
 
@@ -63,7 +61,6 @@ catalago acrilicos/
 | **GSAP** (CDN) | Animações de entrada (`fade-up`), cards e modal |
 | **localStorage** | Persistência do carrinho entre sessões |
 | **WhatsApp API** | Canal de envio do orçamento (`wa.me`) |
-| **JSON-LD / Open Graph** | Metadados para SEO, compartilhamento e buscadores |
 
 ---
 
@@ -101,10 +98,8 @@ O projeto é dividido em módulos independentes, todos importados pelo `app.js`:
 import { runInitialAnimations } from "./animations.js";
 import { initCart }             from "./cart.js";
 import { initCatalogPage, initHomeCategories } from "./catalog.js";
-import { initNavigation }       from "./navigation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  initNavigation();
   initCart();
   initHomeCategories();
   initCatalogPage();
@@ -123,7 +118,6 @@ Fonte única de verdade do catálogo. Exporta:
 Responsável por:
 - Renderizar os cards de categoria na home (`initHomeCategories`)
 - Construir os filtros da sidebar (categoria, tipo, origem)
-- Controlar a abertura dos filtros no mobile
 - Filtrar produtos por busca textual normalizada (sem acento)
 - Abrir e fechar o modal de produto com animação GSAP
 - Renderizar botões de variação e specs da variação selecionada
@@ -136,12 +130,6 @@ Responsável por:
 - Controlar abertura/fechamento do drawer
 - Atualizar quantidades e remover itens
 - Gerar a mensagem estruturada e enviá-la ao WhatsApp
-
-### `navigation.js`
-Responsável por:
-- Abrir e fechar o menu hambúrguer no mobile
-- Atualizar `aria-expanded` e `aria-hidden` para acessibilidade
-- Fechar o menu ao navegar, pressionar `Esc` ou voltar para largura desktop
 
 ### `animations.js`
 - `runInitialAnimations()` — anima elementos `[data-animate="fade-up"]` na carga da página
@@ -299,4 +287,4 @@ Por ser um site estático (HTML + CSS + JS sem build), pode ser hospedado em qua
 
 ## Desenvolvido por
 
-**Melk Zedek Soluções Tech**
+**Melk Zedek Soluções Tech ** 

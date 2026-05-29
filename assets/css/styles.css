@@ -1253,38 +1253,65 @@ h4 {
 
 .menu-toggle {
   display: none;
+  position: relative;
   width: 44px;
   height: 44px;
   place-items: center;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: #fff;
+  color: var(--dark);
   cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.menu-toggle:hover,
+.menu-toggle.open {
+  border-color: rgba(26, 107, 60, 0.28);
+  background: var(--accent-soft);
 }
 
 .menu-toggle span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
   display: block;
-  width: 20px;
+  width: 19px;
   height: 2px;
   border-radius: 999px;
-  background: var(--dark);
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  background: currentColor;
+  transform: translate(-50%, calc(-50% + var(--menu-line-y))) rotate(0);
+  transform-origin: center;
+  transition:
+    transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.16s ease,
+    width 0.2s ease;
 }
 
-.menu-toggle span + span {
-  margin-top: 4px;
+.menu-toggle span:nth-child(1) {
+  --menu-line-y: -6px;
+}
+
+.menu-toggle span:nth-child(2) {
+  --menu-line-y: 0px;
+}
+
+.menu-toggle span:nth-child(3) {
+  --menu-line-y: 6px;
 }
 
 .menu-toggle.open span:nth-child(1) {
-  transform: translateY(6px) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .menu-toggle.open span:nth-child(2) {
   opacity: 0;
+  width: 6px;
+  transform: translate(-50%, -50%) scaleX(0.2);
 }
 
 .menu-toggle.open span:nth-child(3) {
-  transform: translateY(-6px) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .mobile-menu {
@@ -1358,34 +1385,97 @@ h4 {
     font-size: 13px;
   }
 
+  .cart-button span:first-child {
+    font-size: 0;
+  }
+
+  .cart-button span:first-child::after {
+    content: "Or\00e7 ar";
+    font-size: 13px;
+  }
+
   .mobile-menu {
     display: grid;
-    max-height: 0;
-    overflow: hidden;
-    border-top: 0 solid var(--border);
-    background: #fff;
-    padding: 0 20px;
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 8px);
+    width: min(calc(100% - 32px), 430px);
+    overflow: visible;
+    gap: 4px;
+    border: 1px solid rgba(226, 224, 218, 0.9);
+    border-radius: 0 0 12px 12px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 18px 48px rgba(20, 20, 20, 0.14);
+    padding: 8px;
     opacity: 0;
-    transition: max-height 0.25s ease, opacity 0.2s ease, padding 0.2s ease, border-width 0.2s ease;
+    pointer-events: none;
+    transform: translate(-50%, -8px) scale(0.98);
+    transform-origin: top center;
+    visibility: hidden;
+    transition:
+      opacity 0.18s ease,
+      transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+      visibility 0s linear 0.22s;
   }
 
   .mobile-menu.open {
-    max-height: 330px;
-    border-top-width: 1px;
-    padding-block: 12px;
     opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, 0) scale(1);
+    visibility: visible;
+    transition-delay: 0s;
   }
 
   .mobile-menu .nav-link {
     justify-content: space-between;
-    min-height: 46px;
-    border-bottom: 1px solid var(--border);
-    border-radius: 0;
-    padding-inline: 4px;
+    min-height: 48px;
+    border: 0;
+    border-radius: var(--radius);
+    padding-inline: 14px;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition:
+      background 0.2s ease,
+      color 0.2s ease,
+      opacity 0.18s ease,
+      transform 0.18s ease;
   }
 
-  .mobile-menu .nav-link:last-child {
-    border-bottom: 0;
+  .mobile-menu.open .nav-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-menu.open .nav-link:nth-child(1) {
+    transition-delay: 0.02s;
+  }
+
+  .mobile-menu.open .nav-link:nth-child(2) {
+    transition-delay: 0.04s;
+  }
+
+  .mobile-menu.open .nav-link:nth-child(3) {
+    transition-delay: 0.06s;
+  }
+
+  .mobile-menu.open .nav-link:nth-child(4) {
+    transition-delay: 0.08s;
+  }
+
+  .mobile-menu .nav-link.active {
+    box-shadow: inset 3px 0 0 var(--accent);
+  }
+
+  .mobile-menu .nav-link-wa {
+    justify-content: center;
+    margin-top: 4px;
+    background: var(--wa);
+    color: #fff;
+  }
+
+  .mobile-menu .nav-link-wa:hover {
+    background: var(--wa-hover);
+    color: #fff;
   }
 
   .hero-shell {
